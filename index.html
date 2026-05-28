@@ -350,21 +350,16 @@
   <!-- JAVASCRIPT -->
   <script>
 
-    function openBlog(blogId) {
+   function openBlog(blogId) {
+  document.querySelectorAll('[id^="blog"]').forEach(el => {
+    el.classList.add("hidden");
+  });
 
-      // Hide all blogs
-      document.getElementById("blog1").classList.add("hidden");
-      document.getElementById("blog2").classList.add("hidden");
-      document.getElementById("blog3").classList.add("hidden");
+  const target = document.getElementById(blogId);
+  target.classList.remove("hidden");
 
-      // Show selected blog
-      document.getElementById(blogId).classList.remove("hidden");
-
-      // Scroll to article
-      document.getElementById(blogId).scrollIntoView({
-        behavior: "smooth"
-      });
-    }
+  target.scrollIntoView({ behavior: "smooth" });
+}
 
   </script>
 
