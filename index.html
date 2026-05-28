@@ -1,0 +1,265 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Living Word</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-neutral-950 text-white">
+
+  <!-- HEADER -->
+  <header class="border-b border-white/10 bg-neutral-950/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+      <div>
+        <h1 class="text-2xl font-bold tracking-wide">The Living Word</h1>
+        <p class="text-sm text-neutral-400">
+          Share stories, videos, and meaningful conversations.
+        </p>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm text-neutral-300">
+        <a href="#home" class="hover:text-white transition">Home</a>
+        <a href="#blogs" class="hover:text-white transition">Blogs</a>
+        <a href="#videos" class="hover:text-white transition">Videos</a>
+        <a href="#community" class="hover:text-white transition">Community</a>
+
+        <button class="bg-white text-black px-4 py-2 rounded-xl font-medium hover:opacity-90 transition">
+          Join Now
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden border-b border-white/10">
+
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-blue-500/10"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
+
+      <div>
+
+        <div class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 text-sm text-emerald-200 mb-6">
+          A modern community publishing platform
+        </div>
+
+        <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+          Share your voice with the world.
+        </h2>
+
+        <p class="text-lg text-neutral-300 leading-relaxed mb-8 max-w-2xl">
+          The Living Word is a platform where creators, writers, and communities
+          come together to publish blogs, upload videos, and connect through
+          meaningful discussions.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+
+          <button class="bg-emerald-500 hover:bg-emerald-400 text-black px-6 py-3 rounded-2xl font-semibold transition">
+            Start Publishing
+          </button>
+
+          <button class="border border-white/20 hover:border-white/50 px-6 py-3 rounded-2xl font-semibold transition">
+            Explore Community
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT CARD -->
+      <div class="grid gap-6">
+
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-6 shadow-2xl">
+
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold">Creator Dashboard</h3>
+
+            <span class="text-xs bg-emerald-400/20 text-emerald-300 px-3 py-1 rounded-full">
+              Live
+            </span>
+          </div>
+
+          <div class="space-y-4">
+
+            <div class="bg-neutral-900 rounded-2xl p-4 border border-white/5">
+              <p class="text-sm text-neutral-400 mb-1">Latest Post</p>
+              <h4 class="font-semibold">Faith, Hope & Creativity</h4>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+
+              <div class="bg-neutral-900 rounded-2xl p-4 border border-white/5">
+                <p class="text-sm text-neutral-400">Views</p>
+                <h4 class="text-2xl font-bold">24.8K</h4>
+              </div>
+
+              <div class="bg-neutral-900 rounded-2xl p-4 border border-white/5">
+                <p class="text-sm text-neutral-400">Members</p>
+                <h4 class="text-2xl font-bold">8.4K</h4>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-3xl p-6 text-black shadow-2xl">
+          <h3 class="text-2xl font-bold mb-2">Connect Through Stories</h3>
+
+          <p class="font-medium opacity-80">
+            Build conversations that inspire and encourage people worldwide.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BLOGS -->
+  <section id="blogs" class="max-w-7xl mx-auto px-6 py-20">
+
+    <div class="flex items-center justify-between mb-10">
+
+      <div>
+        <h2 class="text-4xl font-bold mb-2">Featured Blogs</h2>
+
+        <p class="text-neutral-400">
+          Publish articles, devotionals, life stories, and reflections.
+        </p>
+      </div>
+
+      <button class="hidden md:block border border-white/20 px-5 py-3 rounded-xl hover:border-white/50 transition">
+        View All Posts
+      </button>
+
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- BLOG CARD -->
+      <article class="bg-white/5 border border-white/10 rounded-3xl p-6 hover:-translate-y-1 transition duration-300 shadow-lg">
+
+        <div class="flex items-center justify-between mb-5">
+
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">
+            Inspiration
+          </span>
+
+          <span class="text-sm text-neutral-400">
+            By Sarah M.
+          </span>
+
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          Finding Meaning in Everyday Life
+        </h3>
+
+        <p class="text-neutral-300 leading-relaxed mb-6">
+          A reflection on discovering purpose, faith, and hope through ordinary moments.
+        </p>
+
+        <button class="font-semibold text-emerald-300 hover:text-emerald-200 transition">
+          Read More →
+        </button>
+
+      </article>
+
+      <!-- BLOG CARD -->
+      <article class="bg-white/5 border border-white/10 rounded-3xl p-6 hover:-translate-y-1 transition duration-300 shadow-lg">
+
+        <div class="flex items-center justify-between mb-5">
+
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">
+            Community
+          </span>
+
+          <span class="text-sm text-neutral-400">
+            By David K.
+          </span>
+
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          How Community Changes Everything
+        </h3>
+
+        <p class="text-neutral-300 leading-relaxed mb-6">
+          Why authentic conversations and shared experiences matter more than ever.
+        </p>
+
+        <button class="font-semibold text-emerald-300 hover:text-emerald-200 transition">
+          Read More →
+        </button>
+
+      </article>
+
+      <!-- BLOG CARD -->
+      <article class="bg-white/5 border border-white/10 rounded-3xl p-6 hover:-translate-y-1 transition duration-300 shadow-lg">
+
+        <div class="flex items-center justify-between mb-5">
+
+          <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">
+            Stories
+          </span>
+
+          <span class="text-sm text-neutral-400">
+            By Emily R.
+          </span>
+
+        </div>
+
+        <h3 class="text-2xl font-semibold mb-4">
+          The Power of Words
+        </h3>
+
+        <p class="text-neutral-300 leading-relaxed mb-6">
+          Exploring how storytelling can inspire transformation and connection.
+        </p>
+
+        <button class="font-semibold text-emerald-300 hover:text-emerald-200 transition">
+          Read More →
+        </button>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-neutral-950">
+
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+
+      <div>
+        <h3 class="font-bold text-lg">The Living Word</h3>
+
+        <p class="text-sm text-neutral-500">
+          A publishing and community platform for inspiration and connection.
+        </p>
+      </div>
+
+      <div class="flex gap-6 text-sm text-neutral-400">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
+```
