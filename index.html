@@ -3,284 +3,487 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- SEO -->
   <title>The Living Word</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta
+    name="description"
+    content="The Living Word — Sharing the Word of God, inspirational videos, and building a faithful community."
+  />
+
+  <meta
+    property="og:title"
+    content="The Living Word"
+  />
+
+  <meta
+    property="og:description"
+    content="Sharing the Word of God, inspirational videos, and connecting people through faith."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:image"
+    content="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1200"
+  />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #f8f6ef;
+      --primary: #8b5e34;
+      --secondary: #d4b483;
+      --text: #2b2b2b;
+      --white: #ffffff;
+      --light: #f3ede2;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 18px 24px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 90vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 80px 20px;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.55),
+          rgba(0,0,0,0.55)
+        ),
+        url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600')
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 36px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* CARDS */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    /* COMMUNITY */
+
+    .community {
+      background: var(--light);
+      border-radius: 30px;
+      padding: 60px;
+      text-align: center;
+    }
+
+    .community h2 {
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: 2.4rem;
+    }
+
+    .community p {
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #1f1f1f;
+      color: white;
+      padding: 60px 24px 30px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 18px;
+      color: var(--secondary);
+    }
+
+    footer a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 50px;
+      color: #999;
+      font-size: 0.95rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .community {
+        padding: 40px 24px;
+      }
+
+    }
+
+  </style>
 </head>
 
-<body class="bg-gray-100 text-gray-900">
+<body>
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+  <!-- NAVBAR -->
 
-      <div>
-        <h1 class="text-3xl font-bold text-emerald-600">
-          The Living Word
-        </h1>
+  <header>
+    <div class="navbar">
 
-        <p class="text-sm text-gray-500">
-          Share stories, videos, and meaningful conversations.
-        </p>
+      <div class="logo">
+        The Living Word
       </div>
 
-      <nav class="flex items-center gap-6 text-sm font-medium">
-        <a href="#home" class="hover:text-emerald-600">Home</a>
-        <a href="#blogs" class="hover:text-emerald-600">Blogs</a>
-        <a href="#videos" class="hover:text-emerald-600">Videos</a>
-        <a href="#community" class="hover:text-emerald-600">Community</a>
-
-        <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-xl">
-          Join Now
-        </button>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#sermons">Sermons</a>
+        <a href="#videos">Videos</a>
+        <a href="#community">Community</a>
+        <a href="#contact">Contact</a>
       </nav>
+
+      <div class="nav-buttons">
+        <button class="btn btn-outline">
+          Sign In
+        </button>
+
+        <button class="btn btn-primary">
+          Join Us
+        </button>
+      </div>
 
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="home" class="bg-gradient-to-r from-emerald-100 to-blue-100 py-24">
 
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+  <section class="hero" id="home">
 
-      <div>
+    <div class="hero-content">
 
-        <div class="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-200 px-4 py-2 text-sm text-emerald-800 mb-6">
-          A modern community publishing platform
-        </div>
+      <h1>
+        Sharing The Living Word With The World
+      </h1>
 
-        <h2 class="text-5xl font-extrabold leading-tight mb-6 text-gray-900">
-          Share your voice with the world.
-        </h2>
+      <p>
+        Faith. Community. Worship. Inspiration.
+        Watch sermons, grow spiritually, and connect
+        with believers around the world.
+      </p>
 
-        <p class="text-lg text-gray-700 leading-relaxed mb-8">
-          The Living Word is a platform where creators, writers, and communities
-          come together to publish blogs, upload videos, and connect through
-          meaningful discussions.
-        </p>
+      <div class="hero-buttons">
 
-        <div class="flex flex-wrap gap-4">
+        <button class="btn btn-primary">
+          Watch Videos
+        </button>
 
-          <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-2xl font-semibold">
-            Start Publishing
-          </button>
-
-          <button class="border border-gray-400 hover:border-gray-600 px-6 py-3 rounded-2xl font-semibold">
-            Explore Community
-          </button>
-
-        </div>
+        <button class="btn btn-outline">
+          Join Community
+        </button>
 
       </div>
 
-      <!-- HERO CARD -->
-      <div class="bg-white rounded-3xl p-8 shadow-2xl">
+    </div>
 
-        <h3 class="text-2xl font-bold mb-4">
-          Creator Dashboard
-        </h3>
+  </section>
 
-        <div class="space-y-4">
+  <!-- SERMONS -->
 
-          <div class="bg-gray-100 rounded-2xl p-4">
-            <p class="text-sm text-gray-500 mb-1">
-              Latest Post
+  <section id="sermons">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Latest Sermons</h2>
+
+        <p>
+          Strengthen your faith with weekly teachings.
+        </p>
+      </div>
+
+      <div class="card-grid">
+
+        <div class="card">
+
+          <img
+            src="https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1200"
+            alt="Sermon"
+          >
+
+          <div class="card-content">
+            <h3>Walking By Faith</h3>
+
+            <p>
+              Discover how trusting God transforms
+              every part of life.
             </p>
 
-            <h4 class="font-semibold">
-              Faith, Hope & Creativity
-            </h4>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4">
-
-            <div class="bg-gray-100 rounded-2xl p-4">
-              <p class="text-sm text-gray-500">Views</p>
-              <h4 class="text-2xl font-bold">24.8K</h4>
-            </div>
-
-            <div class="bg-gray-100 rounded-2xl p-4">
-              <p class="text-sm text-gray-500">Members</p>
-              <h4 class="text-2xl font-bold">8.4K</h4>
-            </div>
-
+            <button class="btn btn-primary">
+              Read More
+            </button>
           </div>
 
         </div>
 
-      </div>
+        <div class="card">
 
-    </div>
+          <img
+            src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=1200"
+            alt="Bible Study"
+          >
 
-  </section>
+          <div class="card-content">
+            <h3>The Power of Prayer</h3>
 
-  <!-- BLOGS -->
-  <section id="blogs" class="max-w-7xl mx-auto px-6 py-20">
+            <p>
+              Learn how prayer builds strength,
+              peace, and spiritual clarity.
+            </p>
 
-    <div class="flex items-center justify-between mb-10">
+            <button class="btn btn-primary">
+              Read More
+            </button>
+          </div>
 
-      <div>
-        <h2 class="text-4xl font-bold mb-2">
-          Featured Blogs
-        </h2>
+        </div>
 
-        <p class="text-gray-600">
-          Click on a blog to read the full article.
-        </p>
-      </div>
+        <div class="card">
 
-    </div>
+          <img
+            src="https://images.unsplash.com/photo-1469460340997-2f854421e72f?q=80&w=1200"
+            alt="Faith"
+          >
 
-    <div class="grid md:grid-cols-3 gap-6">
+          <div class="card-content">
+            <h3>Hope In Difficult Times</h3>
 
-      <!-- BLOG 1 -->
-      <article class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition">
+            <p>
+              Encouragement and scripture for
+              seasons of struggle and uncertainty.
+            </p>
 
-        <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">
-          Inspiration
-        </span>
-
-        <h3 class="text-2xl font-semibold mt-4 mb-4">
-          Finding Meaning in Everyday Life
-        </h3>
-
-        <p class="text-gray-600 mb-6">
-          A reflection on discovering purpose, faith, and hope through ordinary moments.
-        </p>
-
-        <button
-          onclick="openBlog('blog1')"
-          class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-xl"
-        >
-          Read More
-        </button>
-
-      </article>
-
-      <!-- BLOG 2 -->
-      <article class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition">
-
-        <span class="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full">
-          Community
-        </span>
-
-        <h3 class="text-2xl font-semibold mt-4 mb-4">
-          How Community Changes Everything
-        </h3>
-
-        <p class="text-gray-600 mb-6">
-          Why authentic conversations and shared experiences matter more than ever.
-        </p>
-
-        <button
-          onclick="openBlog('blog2')"
-          class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-xl"
-        >
-          Read More
-        </button>
-
-      </article>
-
-      <!-- BLOG 3 -->
-      <article class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition">
-
-        <span class="text-xs bg-pink-100 text-pink-700 px-3 py-1 rounded-full">
-          Stories
-        </span>
-
-        <h3 class="text-2xl font-semibold mt-4 mb-4">
-          The Power of Words
-        </h3>
-
-        <p class="text-gray-600 mb-6">
-          Exploring how storytelling can inspire transformation and connection.
-        </p>
-
-        <button
-          onclick="openBlog('blog3')"
-          class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-xl"
-        >
-          Read More
-        </button>
-
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- BLOG CONTENT -->
-  <section class="max-w-5xl mx-auto px-6 pb-20">
-
-    <div id="blog1" class="hidden bg-white rounded-3xl p-8 shadow-xl mb-8">
-      <h2 class="text-4xl font-bold mb-4">
-        Finding Meaning in Everyday Life
-      </h2>
-
-      <p class="text-gray-700 leading-relaxed">
-        Sometimes the most meaningful moments in life are the quiet ones.
-        Through everyday conversations, small acts of kindness, and moments of reflection,
-        we often discover purpose and hope where we least expect it.
-      </p>
-    </div>
-
-    <div id="blog2" class="hidden bg-white rounded-3xl p-8 shadow-xl mb-8">
-      <h2 class="text-4xl font-bold mb-4">
-        How Community Changes Everything
-      </h2>
-
-      <p class="text-gray-700 leading-relaxed">
-        Real community creates support, growth, and belonging.
-        When people come together to share experiences and encourage each other,
-        lives can be transformed in powerful ways.
-      </p>
-    </div>
-
-    <div id="blog3" class="hidden bg-white rounded-3xl p-8 shadow-xl mb-8">
-      <h2 class="text-4xl font-bold mb-4">
-        The Power of Words
-      </h2>
-
-      <p class="text-gray-700 leading-relaxed">
-        Stories have the ability to inspire, heal, and unite people.
-        Words can bring hope during difficult seasons and help communities grow stronger together.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- VIDEOS -->
-  <section id="videos" class="bg-white py-20">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-      <h2 class="text-4xl font-bold mb-10">
-        Video Sharing
-      </h2>
-
-      <div class="grid lg:grid-cols-3 gap-6">
-
-        <div class="bg-gray-100 rounded-3xl overflow-hidden shadow-lg">
-
-          <iframe
-  class="w-full h-56"
-  src="https://www.youtube.com/embed/VIDEO_ID"
-  title="Video player"
-  allowfullscreen
-></iframe>
-
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold mb-3">
-              Weekly Encouragement Session
-            </h3>
-
-            <button
-              onclick="alert('Video feature coming soon!')"
-              class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-xl"
-            >
-              Watch Video
+            <button class="btn btn-primary">
+              Read More
             </button>
           </div>
 
@@ -292,33 +495,80 @@
 
   </section>
 
-  <!-- COMMUNITY -->
-  <section id="community" class="max-w-7xl mx-auto px-6 py-20">
+  <!-- VIDEOS -->
 
-    <h2 class="text-4xl font-bold mb-10">
-      Community Discussions
-    </h2>
+  <section id="videos">
 
-    <div class="space-y-6">
+    <div class="container">
 
-      <div class="bg-white rounded-2xl p-6 shadow-lg">
-        <h3 class="font-bold text-xl mb-2">
-          Michael
-        </h3>
+      <div class="section-title">
+        <h2>Featured Videos</h2>
 
-        <p class="text-gray-700">
-          What inspires you to keep moving forward during difficult seasons?
+        <p>
+          Watch inspirational teachings and worship.
         </p>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 shadow-lg">
-        <h3 class="font-bold text-xl mb-2">
-          Sophia
-        </h3>
+      <div class="card-grid">
 
-        <p class="text-gray-700">
-          I’d love to hear everyone’s favorite inspirational books or podcasts.
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200"
+            alt="Video"
+          >
+
+          <div class="card-content">
+            <h3>Sunday Worship</h3>
+
+            <p>
+              Join us in praise and worship every week.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1529074963764-98f45c47344b?q=80&w=1200"
+            alt="Community"
+          >
+
+          <div class="card-content">
+            <h3>Bible Study Sessions</h3>
+
+            <p>
+              Dive deeper into scripture with believers worldwide.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- COMMUNITY -->
+
+  <section id="community">
+
+    <div class="container">
+
+      <div class="community">
+
+        <h2>
+          A Faith Community Built On Love
+        </h2>
+
+        <p>
+          The Living Word exists to encourage people,
+          share God's message, and create meaningful
+          connections through faith and fellowship.
         </p>
+
+        <button class="btn btn-primary">
+          Become Part Of The Community
+        </button>
+
       </div>
 
     </div>
@@ -326,45 +576,44 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-white border-t">
 
-    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+  <footer id="contact">
+
+    <div class="footer-container">
 
       <div>
-        <h3 class="font-bold text-lg">
-          The Living Word
-        </h3>
+        <h3>The Living Word</h3>
 
-        <p class="text-sm text-gray-500">
-          A publishing and community platform for inspiration and connection.
+        <p>
+          Sharing the Word of God through teachings,
+          worship, videos, and fellowship.
         </p>
       </div>
 
-      <div class="flex gap-6 text-sm text-gray-500">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Contact</a>
+      <div>
+        <h3>Explore</h3>
+
+        <a href="#">Home</a>
+        <a href="#">Sermons</a>
+        <a href="#">Videos</a>
+        <a href="#">Community</a>
+      </div>
+
+      <div>
+        <h3>Connect</h3>
+
+        <a href="#">YouTube</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
       </div>
 
     </div>
 
+    <div class="footer-bottom">
+      © 2026 The Living Word — All Rights Reserved
+    </div>
+
   </footer>
-
-  <!-- JAVASCRIPT -->
-  <script>
-
-   function openBlog(blogId) {
-  document.querySelectorAll('[id^="blog"]').forEach(el => {
-    el.classList.add("hidden");
-  });
-
-  const target = document.getElementById(blogId);
-  target.classList.remove("hidden");
-
-  target.scrollIntoView({ behavior: "smooth" });
-}
-
-  </script>
 
 </body>
 </html>
