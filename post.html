@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Post - The Living Word</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+      line-height: 1.8;
+      background: #f8f6ef;
+      color: #2b2b2b;
+    }
+
+    h1 {
+      color: #8b5e34;
+    }
+
+    a {
+      color: #8b5e34;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="post"></div>
+
+  <script>
+    const posts = {
+      "novus-ordo-seclorum": `
+        <h1>Novus Ordo Seclorum</h1>
+
+        <p>
+        For centuries now there have been rumors and conspiracies about this phrase...
+        </p>
+
+        <p>
+        (Paste your FULL blog content here — I can format it nicely for you if you want)
+        </p>
+      `,
+
+      "why-sabbath": `
+        <h1>Why Sabbath Matters</h1>
+
+        <p>
+        The Sabbath is deeply rooted in scripture and spiritual practice...
+        </p>
+      `
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+
+    document.getElementById("post").innerHTML =
+      posts[slug] || "<h1>Post not found</h1>";
+  </script>
+
+</body>
+</html>
