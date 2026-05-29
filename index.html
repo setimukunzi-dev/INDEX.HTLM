@@ -425,7 +425,53 @@
       </p>
     </div>
 
-    <div class="card-grid">
+    <section class="container">
+
+  <h2 style="text-align:center; margin:40px 0; color:#8b5e34;">
+    Latest Blog Posts
+  </h2>
+
+  <div id="posts" class="card-grid"></div>
+
+</section>
+
+<script>
+async function loadPosts() {
+  const res = await fetch('./posts.json');
+  const posts = await res.json();
+
+  const container = document.getElementById('posts');
+
+  posts.forEach(post => {
+    container.innerHTML += `
+      <div class="card">
+
+        <img src="${post.image}" alt="${post.title}">
+
+        <div class="card-content">
+
+          <h3>${post.title}</h3>
+
+          <p>${post.excerpt}</p>
+
+          <small style="color:gray;">${post.date}</small>
+
+          <br><br>
+
+          <a class="btn btn-primary"
+             href="post.html?slug=${post.slug}">
+             Read More
+          </a>
+
+        </div>
+
+      </div>
+    `;
+  });
+}
+
+loadPosts();
+</script>
 
       <!-- VIDEO 1 -->
 
